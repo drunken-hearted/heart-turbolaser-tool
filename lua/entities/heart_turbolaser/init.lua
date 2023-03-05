@@ -13,10 +13,11 @@ function ENT:Initialize()
 	local phys = self:GetPhysicsObject();
 
 	if (phys:IsValid()) then
-		phys:Wake();
 		phys:EnableGravity(false);
 		phys:EnableDrag(false);
 		phys:EnableCollisions(true);
+
+		phys:Wake();
 	end
 
 	self:SetScale(self:GetVar("scale", 1));

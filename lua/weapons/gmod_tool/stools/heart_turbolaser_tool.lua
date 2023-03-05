@@ -35,14 +35,15 @@ TOOL.ClientConVar["spread"] = 0;
 
 local defaultCV = TOOL:BuildConVarList();
 
-// summon turbolaser function
-function TOOL:Turbolaser()
-	if CLIENT then return end
-
+function TOOL:VerifyValues()
 	local speed = self:GetClientNumber("speed");
 	local damage = self:GetClientNumber("damage");
 	local radius = self:GetClientNumber("radius");
 	local scale = self:GetClientNumber("scale");
+
+	local shots = self:GetClientNumber("shots");
+	local delay = self:GetClientNumber("delay");
+	local spread = self:GetClientNumber("spread");
 
 	local r = self:GetClientNumber("r");
 	local g = self:GetClientNumber("g");
@@ -53,9 +54,31 @@ function TOOL:Turbolaser()
 	if radius < 0 then return false end
 	if scale < 0 then return false end
 
+	if shots <= 0 then return false end
+	if delay < 0 then return false end
+	if spread < 0 then return false end
+
 	if r < 0 || r > 255 then return false end
 	if g < 0 || g > 255 then return false end
 	if b < 0 || b > 255 then return false end
+
+	return true;
+end
+
+// summon turbolaser function
+function TOOL:Turbolaser()
+	if CLIENT then return end
+
+	if not self:VerifyValues() then return end
+
+	local speed = self:GetClientNumber("speed");
+	local damage = self:GetClientNumber("damage");
+	local radius = self:GetClientNumber("radius");
+	local scale = self:GetClientNumber("scale");
+
+	local r = self:GetClientNumber("r");
+	local g = self:GetClientNumber("g");
+	local b = self:GetClientNumber("b");
 
 	local laser = ents.Create("heart_turbolaser");
 	laser:SetVar("speed", speed);
@@ -124,6 +147,54 @@ end
 
 // spawner from face
 function TOOL:Reload()
+	if CLIENT then return end;
+
+	if not self:VerifyValues() then return end
+
+	local ply = self:GetOwner();
+
+	local speed = self:GetClientNumber("speed");
+	local damage = self:GetClientNumber("damage");
+	local radius = self:GetClientNumber("radius");
+	local scale = self:GetClientNumber("scale");
+
+	local shots = self:GetClientNumber("shots");
+	local delay = self:GetClientNumber("delay");
+	local spread = self:GetClientNumber("spread");
+
+	local r = self:GetClientNumber("r");
+	local g = self:GetClientNumber("g");
+	local b = self:GetClientNumber("b");
+
+	local spawner = ents.Create("heart_turbolaser_spawner");
+
+	spawner:SetOwner(ply);
+	spawner:SetPos(self:GetOwner():GetShootPos());
+	spawner:SetAngles(self:GetOwner():GetAngles());
+
+	spawner:SetVar("speed", speed);
+	spawner:SetVar("damage", damage);
+	spawner:SetVar("radius", radius);
+
+	spawner:SetVar("shots", shots);
+	spawner:SetVar("delay", delay);
+	spawner:SetVar("spread", spread);
+
+	spawner:SetVar("scale", scale);
+	spawner:SetVar("r", r);
+	spawner:SetVar("g", g);
+	spawner:SetVar("b", b);
+
+	spawner:Spawn();
+	spawner:Activate();
+
+	undo.Create("Spawner");
+	undo.AddEntity(spawner);
+	undo.SetPlayer(ply);
+	undo.SetCustomUndoText("Undone Turbolaser Spawner");
+	undo.Finish();
+
+	print("undo ready")
 end
 
 function TOOL.BuildCPanel(panel)
