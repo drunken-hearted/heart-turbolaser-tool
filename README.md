@@ -20,6 +20,10 @@ Yes, you probably should as this is more optimized and cleaner allowing for more
  
 If the tool detects any invalid values and you **DO NOT** get any errors, it will simply just not do anything. If this is happening to you, just simply go back to the default preset.
 
+> "I found an error/bug/unintended thing!"
+ 
+Great! If you know how to fix it, chuck a pull request and i'll look into getting it merged. If you don't know how to fix it, report it in the github issues page or make a post in the steam forums. **(NOT THE COMMENTS)** Make sure to include as much detail as you can including your turbolaser settings aswell as how to recreate the issue!
+
 <img src="https://media.discordapp.net/attachments/529602825269936139/1081864378476933191/tutorial.gif" alt="instructional gif">
 
 <img src="https://media.discordapp.net/attachments/529602825269936139/1081864674850648064/links.png" alt="links">
