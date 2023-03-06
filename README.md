@@ -22,7 +22,7 @@ Great! If you know how to fix it, chuck a pull request and i'll look into gettin
 
 > "Why does nothing happen when I click?"
  
-If the tool detects any invalid values and you **DO NOT** get any errors, it will simply just not do anything. If this is happening to you, just simply go back to the default preset.
+If the tool detects any invalid values and you **DO NOT** get any errors, it will simply just not do anything. If this is happening to you, try going back to the default preset.
 
 <img src="https://media.discordapp.net/attachments/529602825269936139/1081864378476933191/tutorial.gif" alt="instructional gif">
 
