@@ -39,6 +39,6 @@ If the tool detects any invalid values and you **DO NOT** get any errors, it wil
 
 **King Pommes** - Making the turbolaser model
 
-**Banks** - Making the turbolaser model compatabile for colour changes
+**Banks** - Making the turbolaser model compatabile for colour changes (He tried and failed, I'm just the better modeller I guess zzzzz)
 
 **Storm** - Inspiring me to revisit this project

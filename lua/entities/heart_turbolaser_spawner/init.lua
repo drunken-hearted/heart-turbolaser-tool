@@ -47,10 +47,7 @@ function ENT:Spawner()
 end
 
 function ENT:Think()
-	if timer.RepsLeft(self.timerName) <= 0 then
-		timer.Remove(self.timerName);
-		self:Remove();
-	end
+	if not timer.Exists(self.timerName) then self:Remove() end
 end
 
 function ENT:OnRemove()

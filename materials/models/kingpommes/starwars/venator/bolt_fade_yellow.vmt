@@ -1,7 +1,0 @@
-"UnLitGeneric"
-//Created by VanillaNekoNYAN
-{
-	"$basetexture" "models/KingPommes/starwars/Venator/bolt_fade_yellow"
-	"$translucent" "1"
-	"$nocull" "1"
-}

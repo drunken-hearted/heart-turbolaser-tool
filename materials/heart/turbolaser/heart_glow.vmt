@@ -1,7 +1,7 @@
 "UnLitGeneric"
 //Created by KingPommes
 {
-	"$basetexture" "models/KingPommes/starwars/Venator/bolt_fade_green"
+	"$basetexture" "heart/turbolaser/heart_glow"
 	"$translucent" "1"
 	"$nocull" "1"
 }
