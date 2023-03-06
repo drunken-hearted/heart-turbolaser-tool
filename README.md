@@ -28,7 +28,7 @@ If the tool detects any invalid values and you **DO NOT** get any errors, it wil
 
 <img src="https://media.discordapp.net/attachments/529602825269936139/1081864674850648064/links.png" alt="links">
 
-[Workshop Page](LINK HERE)
+[Workshop Page](https://steamcommunity.com/sharedfiles/filedetails/?id=2943090068)
 
 [My Steam Profile](https://steamcommunity.com/id/drunkenhearted/)
 
